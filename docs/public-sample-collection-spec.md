@@ -304,7 +304,7 @@ YYYY-source-type-topic-shortname.md
 
 ```yaml
 title: 某政策或材料标题
-source_type: policy | annual-report | research | ppt | rewrite-case
+source_type: policy | annual-report | quarterly-report | research | ppt | briefing | rewrite-case | other
 source_name: 来源机构或来源平台
 public_confirmed: true
 collection_reason:

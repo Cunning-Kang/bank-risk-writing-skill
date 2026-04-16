@@ -4,6 +4,10 @@
 # 案例名称（简明标识）
 case_name: ""
 
+# 样本来源类型（必填，rewrite-case 系列固定为 rewrite-case）
+# 可选值：policy | annual-report | quarterly-report | research | ppt | briefing | rewrite-case | other
+source_type: "rewrite-case"
+
 # 原始材料来源
 source_origin: ""
 
