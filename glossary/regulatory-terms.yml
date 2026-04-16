@@ -1,0 +1,11 @@
+id: regulatory-terms
+version: 0.1
+terms:
+  - term: 监管要求
+    note: 应仅在材料中存在明确要求时使用
+  - term: 配套规则
+    note: 可用于提示后续观察点
+  - term: 规范导向
+    note: 用于概括政策方向时较稳健
+  - term: 实施细则
+    note: 若尚未发布，应明确写为待观察事项

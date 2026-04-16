@@ -1,0 +1,13 @@
+id: weak-expressions-to-rewrite
+version: 0.1
+mappings:
+  - from: 这个政策很重要
+    to: 该政策变化值得关注
+  - from: 影响会很大
+    to: 可能对相关工作产生一定影响
+  - from: 风险比较高
+    to: 相关风险值得持续关注
+  - from: 问题很严重
+    to: 相关问题可能带来一定压力
+  - from: 需要高度重视
+    to: 建议持续关注其后续变化

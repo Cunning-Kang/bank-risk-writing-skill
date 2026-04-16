@@ -1,0 +1,22 @@
+# Rewrite Case Metadata Template
+# 每组改写对照案例必须填写此文件
+
+# 案例名称（简明标识）
+case_name: ""
+
+# 原始材料来源
+source_origin: ""
+
+# 是否确认为公开材料（必须为 true）
+public_confirmed: false
+
+# 目标 skill
+# 可选值：policy-brief | formal-polish | report-outline | ppt-outline
+target_skill: ""
+
+# 改写目标（简述）
+rewrite_goal: ""
+
+# 风险备注（有则列出，无则写 "none"）
+# 例如：改写中未引入非公开信息 / 原文部分数据来源不明已在 output 中标注
+risk_notes: "none"

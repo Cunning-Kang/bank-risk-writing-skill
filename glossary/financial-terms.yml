@@ -1,0 +1,11 @@
+id: financial-terms
+version: 0.1
+terms:
+  - term: 风险敞口
+    note: 需根据上下文区分信用风险、市场风险或其他类型风险敞口
+  - term: 风险偏好
+    note: 不应在无依据情况下推断具体机构的内部风险偏好
+  - term: 不确定性
+    note: 适合用于替代过强的负面判断
+  - term: 压力
+    note: 常用于替代“严峻”“巨大”等情绪化描述
