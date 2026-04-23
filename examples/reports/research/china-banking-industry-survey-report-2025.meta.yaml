@@ -1,0 +1,37 @@
+title: "中国银行业调查报告2025"
+
+source_type: research
+
+source_name: 毕马威 (KPMG)
+
+public_confirmed: true
+
+collection_reason:
+  - structure-sample
+  - style-sample
+  - test-sample
+
+quality_score: 4
+
+risk_flags:
+  - promotional-tone
+
+tags:
+  - 银行
+  - 行业调查
+  - 研究报告
+  - KPMG
+  - 风险管理
+  - 数字化转型
+
+usable_for:
+  - report-outline
+  - policy-brief
+  - ppt-outline
+
+notes: >
+  公开行业调查报告，数据丰富，结构清晰。
+  适合学习研究报告框架、数据分析表述和行业趋势判断写法。
+  需注意咨询公司视角倾向，结论不具有监管权威性。
+  适合学什么：报告结构、数据引用方式、趋势分析表述。
+  不适合学什么：作为监管政策依据。

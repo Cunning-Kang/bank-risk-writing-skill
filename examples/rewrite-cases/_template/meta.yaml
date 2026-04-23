@@ -14,13 +14,38 @@ source_origin: ""
 # 是否确认为公开材料（必须为 true）
 public_confirmed: false
 
-# 目标 skill
+# 适用于哪些 skill（至少选一项）
 # 可选值：policy-brief | formal-polish | report-outline | ppt-outline
-target_skill: ""
+usable_for: []
+  # - policy-brief
+  # - formal-polish
 
 # 改写目标（简述）
 rewrite_goal: ""
 
+# 样本质量评分（建议填写，1-5 分）
+# 5=极优 4=良好 3=可用 2=有问题 1=仅建议作负样本
+quality_score: 0
+
+# 风险标记（有则列出，无则写 [none]）
+# 可选值：promotional-tone | low-density | ocr-issues | unclear-structure | over-confident-conclusion | none
+risk_flags:
+  - none
+
+# 主要保留边界（建议填写）
+# 例如：保留原意 / 不新增事实 / 不改变结论强度
+must_preserve: []
+  # - 保留原意
+  # - 不新增数字或出处
+  # - 不把审慎判断改成确定结论
+
+# 主要改写动作（建议填写）
+# 例如：口语化转书面化 / 长文压缩为PPT页级提纲
+rewrite_actions: []
+  # - 口语化转正式化
+  # - 长文重组为页级结构
+  # - 从政策原文提炼为简报
+
 # 风险备注（有则列出，无则写 "none"）
-# 例如：改写中未引入非公开信息 / 原文部分数据来源不明已在 output 中标注
+# 例如：原文部分数据来源不明，已在 output 中标注待核实
 risk_notes: "none"

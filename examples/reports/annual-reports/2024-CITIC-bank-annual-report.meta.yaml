@@ -1,0 +1,35 @@
+title: "2024年中信银行年度报告"
+
+source_type: annual-report
+
+source_name: 中信银行
+
+public_confirmed: true
+
+collection_reason:
+  - style-sample
+  - structure-sample
+
+quality_score: 5
+
+risk_flags:
+  - none
+
+tags:
+  - 年报
+  - 银行
+  - 中信银行
+  - 财务报告
+  - 风险管理
+  - 公司治理
+
+usable_for:
+  - report-outline
+  - formal-polish
+  - policy-brief
+
+notes: >
+  上市银行公开年报，适合学习正式年报结构、风险披露表述和财务数据呈现方式。
+  年报内容经审计，数据可信度高。
+  适合学什么：风险章节结构、管理层讨论与分析表述、数据披露格式。
+  不适合学什么：作为行业整体判断依据（单一银行视角）。

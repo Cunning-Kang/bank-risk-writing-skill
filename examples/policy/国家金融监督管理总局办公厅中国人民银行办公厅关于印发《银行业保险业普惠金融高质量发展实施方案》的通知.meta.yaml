@@ -1,0 +1,35 @@
+title: "银行业保险业普惠金融高质量发展实施方案"
+
+source_type: policy
+
+source_name: 国家金融监督管理总局、中国人民银行
+
+public_confirmed: true
+
+collection_reason:
+  - structure-sample
+  - style-sample
+  - test-sample
+
+quality_score: 5
+
+risk_flags:
+  - none
+
+tags:
+  - 普惠金融
+  - 政策
+  - 银行
+  - 保险
+  - 高质量发展
+  - 联合发文
+
+usable_for:
+  - policy-brief
+  - formal-polish
+  - report-outline
+
+notes: >
+  联合发文的政策实施方案，适合学习政策文件结构（背景-目标-任务-保障）和正式表述。
+  可作为政策解读、改写任务的测试输入。
+  不含推广性内容，政策口径明确。

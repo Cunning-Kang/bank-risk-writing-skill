@@ -1,0 +1,25 @@
+{
+  "name": "bank-risk-writing-skill",
+  "version": "1.0.0",
+  "description": "一个面向**银行风险管理 / 政策研究 / 正式汇报 / PPT 提纲化**场景的公开资料写作辅助项目骨架。",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cunning-Kang/bank-risk-writing-skill.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Cunning-Kang/bank-risk-writing-skill/issues"
+  },
+  "homepage": "https://github.com/Cunning-Kang/bank-risk-writing-skill#readme"
+}

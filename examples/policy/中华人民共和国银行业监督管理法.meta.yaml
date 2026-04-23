@@ -1,0 +1,32 @@
+title: "中华人民共和国银行业监督管理法"
+
+source_type: policy
+
+source_name: 全国人民代表大会常务委员会
+
+public_confirmed: true
+
+collection_reason:
+  - structure-sample
+  - style-sample
+
+quality_score: 5
+
+risk_flags:
+  - none
+
+tags:
+  - 监管
+  - 银行业
+  - 法律
+  - 监督管理
+  - 正式文本
+
+usable_for:
+  - policy-brief
+  - formal-polish
+
+notes: >
+  核心监管法律原文，2003年颁布、2006年修正。
+  适合学习正式法律文本结构（章-条式层级）和审慎表述方式。
+  不含推广性内容，可作为权威政策引用基准。
