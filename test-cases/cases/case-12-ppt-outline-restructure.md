@@ -2,7 +2,7 @@
 
 ## 目标能力
 
-`skills/ppt-outline.md` — 长文重构为 PPT 提纲
+`skills/ppt-outline/SKILL.md` — 长文重构为 PPT 提纲
 
 ## 测试目的
 

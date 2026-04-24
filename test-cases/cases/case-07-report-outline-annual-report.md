@@ -2,7 +2,7 @@
 
 ## 目标能力
 
-`skills/report-outline.md` — 年报场景报告提纲生成
+`skills/report-outline/SKILL.md` — 年报场景报告提纲生成
 
 ## 测试目的
 

@@ -2,7 +2,7 @@
 
 ## 目标能力
 
-`skills/ppt-outline.md` — 管理层汇报版 PPT 提纲生成
+`skills/ppt-outline/SKILL.md` — 管理层汇报版 PPT 提纲生成
 
 ## 测试目的
 

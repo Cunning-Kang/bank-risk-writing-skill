@@ -2,7 +2,7 @@
 
 ## 目标能力
 
-`skills/report-outline.md` — 输入不足场景的保守输出
+`skills/report-outline/SKILL.md` — 输入不足场景的保守输出
 
 ## 测试目的
 

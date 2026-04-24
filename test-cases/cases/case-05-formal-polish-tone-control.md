@@ -2,7 +2,7 @@
 
 ## 目标能力
 
-`skills/formal-polish.md` — 语气控制润色
+`skills/formal-polish/SKILL.md` — 语气控制润色
 
 ## 测试目的
 

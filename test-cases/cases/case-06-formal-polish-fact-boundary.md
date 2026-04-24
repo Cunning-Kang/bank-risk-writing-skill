@@ -2,7 +2,7 @@
 
 ## 目标能力
 
-`skills/formal-polish.md` — 事实边界控制
+`skills/formal-polish/SKILL.md` — 事实边界控制
 
 ## 测试目的
 

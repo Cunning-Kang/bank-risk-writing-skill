@@ -1,7 +1,14 @@
 ---
 name: report-outline
 description: 基于公开资料、已有摘要或草稿，生成适合研究、分析或正式汇报场景使用的结构化报告提纲
-tools: Read, Grep, Glob
+when_to_use:
+  - 用户需要从公开资料、政策文本、年报章节或草稿生成报告大纲或结构化提纲
+  - 用户要求搭建可写作的报告框架而非仅做语言润色
+  - 用户提到"报告提纲""研究框架""汇报稿结构""帮我搭个大纲"等意图
+allowed-tools:
+  - Read
+  - Grep
+  - Glob
 ---
 
 # Purpose
@@ -139,3 +146,35 @@ tools: Read, Grep, Glob
 - 是否避免了空泛、脱离材料的章节
 - 对材料缺口是否有明确提示
 - 是否没有新增材料中不存在的事实和强结论
+
+# Additional Resources
+
+Shared rules:
+- `rules/factuality-rules.md` — factuality constraints and uncertainty labeling
+- `rules/citation-rules.md` — citation and source handling requirements
+- `rules/confidentiality-boundary.md` — public-material boundary and internal-policy prohibition
+- `rules/writing-principles.md` — ordering, structure, and style principles
+- `rules/tone-and-style.md` — target tone and expressions to avoid
+- `rules/banned-and-caution-phrases.md` — prohibited and caution expressions with recommended alternatives
+
+Templates:
+- `templates/risk-report-template.md` — risk report structure template
+- `templates/exec-summary-template.md` — executive summary structure template
+
+Glossary (optional expression guidance; do not treat as a factual source):
+- `glossary/preferred-expressions.yml` — recommended formal and cautious expressions
+
+Review checklist:
+- `checklists/report-review-checklist.md` — self-check items for report outline output
+
+Acceptance references:
+- `test-cases/TEST_PLAN.md` — test plan covering skill acceptance criteria
+- `test-cases/cases/case-07-report-outline-annual-report.md`
+- `test-cases/cases/case-08-report-outline-multi-source.md`
+- `test-cases/cases/case-09-report-outline-insufficient-input.md`
+- `test-cases/expected/case-07.expected.md`
+- `test-cases/expected/case-08.expected.md`
+- `test-cases/expected/case-09.expected.md`
+
+Project-level writing rules:
+- `CLAUDE.md`

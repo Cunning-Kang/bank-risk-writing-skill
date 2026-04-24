@@ -1,7 +1,14 @@
 ---
 name: policy-brief
 description: 将公开政策、监管文件、通知或答记者问整理为适合银行风险管理、政策研究或汇报使用的结构化摘要
-tools: Read, Grep, Glob
+when_to_use:
+  - 用户要求对政策原文做摘要、要点提炼或影响梳理
+  - 用户需要将政策材料整理为简报或汇报前置材料（政策解读、监管文件摘要、规则变化梳理）
+  - 用户提到"政策简报""监管摘要""文件要点""政策梳理""答记者问整理"等意图
+allowed-tools:
+  - Read
+  - Grep
+  - Glob
 ---
 
 # Purpose
@@ -137,3 +144,35 @@ tools: Read, Grep, Glob
 - 是否没有编造政策细节或监管口径
 - 是否对不明确部分做了待核实标记
 - 是否保持了正式、克制、非媒体化风格
+
+# Additional Resources
+
+Shared rules:
+- `rules/factuality-rules.md` — factuality constraints and uncertainty labeling
+- `rules/citation-rules.md` — citation and source handling requirements
+- `rules/confidentiality-boundary.md` — public-material boundary and internal-policy prohibition
+- `rules/writing-principles.md` — ordering, structure, and style principles
+- `rules/tone-and-style.md` — target tone and expressions to avoid
+- `rules/banned-and-caution-phrases.md` — prohibited and caution expressions with recommended alternatives
+
+Templates:
+- `templates/policy-analysis-template.md` — policy analysis structure template
+
+Glossary (optional expression guidance; do not treat as a factual source):
+- `glossary/preferred-expressions.yml` — recommended formal and cautious expressions
+- `glossary/regulatory-terms.yml` — regulatory term usage notes
+
+Review checklist:
+- `checklists/policy-review-checklist.md` — self-check items for policy brief output
+
+Acceptance references:
+- `test-cases/TEST_PLAN.md` — test plan covering skill acceptance criteria
+- `test-cases/cases/case-01-policy-brief-basic.md`
+- `test-cases/cases/case-02-policy-brief-exec.md`
+- `test-cases/cases/case-03-policy-brief-boundary.md`
+- `test-cases/expected/case-01.expected.md`
+- `test-cases/expected/case-02.expected.md`
+- `test-cases/expected/case-03.expected.md`
+
+Project-level writing rules:
+- `CLAUDE.md`
