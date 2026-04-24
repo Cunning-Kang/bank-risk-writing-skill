@@ -2,7 +2,7 @@
 
 ## 期望输出结构
 
-输出必须严格包含以下段落（对应 `formal-polish.md` 的 `Default Output Structure`）：
+输出必须严格包含以下段落（对应 `formal-polish` skill 的 `Default Output Structure`）：
 
 1. **修改方向** — 用 3–5 条说明本次润色做了什么；只描述语言和结构调整，不声称新增分析
 2. **修订稿** — 完整改写后的正文；以连贯文本呈现，**不得夹杂解释性括注**
@@ -46,7 +46,7 @@
 
 ## 不应出现的问题
 
-### Hard Rules 映射（对应 formal-polish.md Hard Rules）
+### Hard Rules 映射（对应 formal-polish skill Hard Rules）
 
 - 新增原文中未提及的事实、数字、出处、案例、机构判断
 - 擅自把"可能、或许、初步、倾向于"改成确定结论

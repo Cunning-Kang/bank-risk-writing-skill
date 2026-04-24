@@ -1,7 +1,14 @@
 ---
 name: formal-polish
 description: 将已有草稿改写为更正式、更审慎、更适合银行风险管理、政策研究与正式汇报场景的文本
-tools: Read, Grep, Glob
+when_to_use:
+  - 用户要求将口语化草稿转为正式书面文本
+  - 用户需要润色、改写、精炼已有段落使其适合汇报或研究场景（正式润色、审慎改写、语言优化）
+  - 用户提到"帮我润色""改得正式一点""换成汇报文字""把这段改写一下"等意图
+allowed-tools:
+  - Read
+  - Grep
+  - Glob
 ---
 
 # Purpose
@@ -135,3 +142,29 @@ tools: Read, Grep, Glob
 - 是否没有新增原文中不存在的事实
 - 是否把高风险断言收紧到了材料能够支持的强度
 - 若原文存在不确定信息，是否明确标出“待核实”或“需补充来源”
+
+# Additional Resources
+
+Shared rules:
+- `rules/factuality-rules.md` — factuality constraints and uncertainty labeling
+- `rules/citation-rules.md` — citation and source handling requirements
+- `rules/confidentiality-boundary.md` — public-material boundary and internal-policy prohibition
+- `rules/writing-principles.md` — ordering, structure, and style principles
+- `rules/tone-and-style.md` — target tone and expressions to avoid
+- `rules/banned-and-caution-phrases.md` — prohibited and caution expressions with recommended alternatives
+
+Glossary (optional expression guidance; do not treat as a factual source):
+- `glossary/preferred-expressions.yml` — recommended formal and cautious expressions
+- `glossary/weak-expressions-to-rewrite.yml` — common informal-to-formal expression mappings
+
+Acceptance references:
+- `test-cases/TEST_PLAN.md` — test plan covering skill acceptance criteria
+- `test-cases/cases/case-04-formal-polish-basic.md`
+- `test-cases/cases/case-05-formal-polish-tone-control.md`
+- `test-cases/cases/case-06-formal-polish-fact-boundary.md`
+- `test-cases/expected/case-04.expected.md`
+- `test-cases/expected/case-05.expected.md`
+- `test-cases/expected/case-06.expected.md`
+
+Project-level writing rules:
+- `CLAUDE.md`

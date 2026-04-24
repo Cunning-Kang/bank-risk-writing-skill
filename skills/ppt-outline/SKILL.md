@@ -1,7 +1,14 @@
 ---
 name: ppt-outline
 description: 将报告、长文、政策解读或研究摘要转换为适合正式汇报场景使用的 PPT 页级提纲
-tools: Read, Grep, Glob
+when_to_use:
+  - 用户需要将报告、长文、政策解读或研究摘要转为页级 PPT 汇报提纲
+  - 用户要求输出带页标题、支撑点和页面逻辑的演示结构而非普通报告大纲
+  - 用户提到"做 PPT""PPT 提纲""转汇报页""演示结构""页级提纲"等意图
+allowed-tools:
+  - Read
+  - Grep
+  - Glob
 ---
 
 # Purpose
@@ -146,3 +153,34 @@ PPT 不是把报告缩短，而是把主线讲清。
 - 是否每页支撑点控制在 3–5 个
 - 是否明确列出了不建议上屏的内容
 - 是否存在把不确定内容写成强结论的情况
+
+# Additional Resources
+
+Shared rules:
+- `rules/factuality-rules.md` — factuality constraints and uncertainty labeling
+- `rules/citation-rules.md` — citation and source handling requirements
+- `rules/confidentiality-boundary.md` — public-material boundary and internal-policy prohibition
+- `rules/writing-principles.md` — ordering, structure, and style principles
+- `rules/tone-and-style.md` — target tone and expressions to avoid
+- `rules/banned-and-caution-phrases.md` — prohibited and caution expressions with recommended alternatives
+
+Templates:
+- `templates/ppt-outline-template.md` — PPT page-level outline structure template
+
+Glossary (optional expression guidance; do not treat as a factual source):
+- `glossary/preferred-expressions.yml` — recommended formal and cautious expressions (see ppt_titles category for title patterns)
+
+Review checklist:
+- `checklists/ppt-review-checklist.md` — self-check items for PPT outline output
+
+Acceptance references:
+- `test-cases/TEST_PLAN.md` — test plan covering skill acceptance criteria
+- `test-cases/cases/case-10-ppt-outline-basic.md`
+- `test-cases/cases/case-11-ppt-outline-exec.md`
+- `test-cases/cases/case-12-ppt-outline-restructure.md`
+- `test-cases/expected/case-10.expected.md`
+- `test-cases/expected/case-11.expected.md`
+- `test-cases/expected/case-12.expected.md`
+
+Project-level writing rules:
+- `CLAUDE.md`

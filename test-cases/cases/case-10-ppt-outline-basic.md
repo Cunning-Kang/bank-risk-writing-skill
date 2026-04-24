@@ -2,7 +2,7 @@
 
 ## 目标能力
 
-`skills/ppt-outline.md` — 基础 PPT 页级提纲生成
+`skills/ppt-outline/SKILL.md` — 基础 PPT 页级提纲生成
 
 ## 测试目的
 

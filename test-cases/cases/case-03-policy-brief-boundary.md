@@ -2,7 +2,7 @@
 
 ## 目标能力
 
-`skills/policy-brief.md` — 材料不足场景下的边界控制
+`skills/policy-brief/SKILL.md` — 材料不足场景下的边界控制
 
 ## 测试目的
 

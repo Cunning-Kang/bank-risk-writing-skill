@@ -2,7 +2,7 @@
 
 ## 目标能力
 
-`skills/policy-brief.md` — 汇报版政策简报生成
+`skills/policy-brief/SKILL.md` — 汇报版政策简报生成
 
 ## 测试目的
 
