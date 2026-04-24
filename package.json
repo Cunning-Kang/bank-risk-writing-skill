@@ -8,7 +8,7 @@
     "example": "examples"
   },
   "scripts": {
-    "test": "node scripts/validate-skills.js"
+    "test": "node scripts/validate-skills.js && node scripts/validate-examples.js"
   },
   "repository": {
     "type": "git",

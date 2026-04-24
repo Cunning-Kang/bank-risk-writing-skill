@@ -324,7 +324,41 @@ usable_for:
   - report-outline
 notes: >
   该样本适合学习政策解读结构，不适合学习PPT标题。
+
+# 来源溯源字段
+source_url: https://example.gov.cn/path/to/document    # test-ready 样本必填
+access_date: 2025-04-15                                 # 建议填写
+source_version: 2006年修正版                              # 建议填写
+archive_note: ""                                        # 选填
+citation_boundary: >
+  本样本仅作为公开材料的结构/风格参考，不得作为监管依据引用。
+  引用任何数据或判断前须核对原始出处。
+can_quote_directly: false
+provenance_note: ""                                     # 无 source_url 时建议填写
+used_in_tests: false
+linked_test_cases: []
 ```
+
+### `quality_score` 说明
+
+`quality_score` 衡量的是该样本作为 skill pack 参考材料的用途价值（结构清晰度、风格成熟度、信息密度），**不**代表：
+- 该样本可作为监管权威依据
+- 样本中数据或判断可外推至来源材料以外的范围
+- 可替代对原始文件的独立核验
+
+### 来源溯源层级
+
+1. **test-ready 样本**（`used_in_tests: true`）：必须具备 `source_url`（或等效 `provenance_note`）、`access_date`、`source_version`、`citation_boundary`、`can_quote_directly`，且 `linked_test_cases` 非空。
+2. **style/structure-only 样本**：必须具备 `citation_boundary` 和来源说明；若无完整溯源字段，须标记为 `not test-ready`。
+
+### 按类型的引用边界
+
+| 类型 | 引用边界 |
+|------|---------|
+| 政策/监管原文 | 仅限该版本该条文的结构与表述参考；须核对最新正式文本 |
+| 年报/披露材料 | 仅支持该机构已披露材料分析；不得外推全行业 |
+| 咨询/研究报告 | 仅作结构或表达参考；非监管依据 |
+| PPT/汇报材料 | 仅作页级逻辑和标题参考；非权威依据 |
 
 ---
 

@@ -53,6 +53,13 @@
 | 风格边界 | 正式、审慎、中性、克制，无媒体化或宣传化表达 | PASS / FAIL |
 | 最终结论 | 以上全部为 PASS 时，本 case 才可判 PASS | PASS / FAIL |
 
-## 7. 当前状态
+## 7. 输入材料引用
 
-当前暂无真实标准输出；本文件只提供可验收的判定规则。正式填入测试输入后，应按本规则逐项自评。
+- 对应 case 文件：`test-cases/cases/case-01-policy-brief-basic.md`
+- 输入来源元数据：`examples/policy/国家金融监督管理总局办公厅中国人民银行办公厅关于印发《银行业保险业普惠金融高质量发展实施方案》的通知.meta.yaml`
+- 输入状态：bounded-input（source_url/access_date 缺失，不标记 test-ready）
+- 运行方式：评审者从公开渠道获取政策原文后作为 skill 输入，或对已有 skill 输出进行回溯评审
+
+## 8. 当前状态
+
+本文件定义了 case-01 的验收判定规则。case-01 已具备 bounded-input（输入材料引用和运行方式说明），可进行人工评审。当前输入材料 source_url/access_date 缺失，补齐后可升级为 test-ready。

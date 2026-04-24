@@ -30,8 +30,9 @@ usable_for:
 notes: >
   公开行业报告，内容结构化程度高，适合学习PPT页级逻辑和观点化标题写法。
   需注意咨询公司报告可能含推广性表述，引用时需审慎甄别。
-  适合学什么：章节划分、数据呈现、趋势判断表述。
-  不适合学什么：结论的权威性（非监管机构发布）。
+  本样本为咨询机构观点，不具有监管权威性，不得作为监管或政策依据。
+  适合学什么：章节划分、数据呈现、趋势判断表述、PPT页级结构。
+  不适合学什么：结论的权威性（非监管机构发布）、推广性措辞。
 
 recommended_uses:
   - 用于 ppt-outline 的页级逻辑与标题组织参考
@@ -40,7 +41,27 @@ recommended_uses:
 not_suitable_for:
   - 不适合作为监管权威依据
   - 不适合学习推广性措辞或过强行业判断
+  - 不适合将咨询机构结论等同于监管判断
+
+# ── 来源溯源 ──
+source_url: ""
+access_date: ""
+source_version: "2025年4月28日发布版"
+archive_note: ""
+citation_boundary: >
+  本样本为德勤公开咨询报告，仅作为结构和表达风格参考。
+  咨询机构观点不代表监管权威，不得作为政策或监管依据引用。
+  报告中的数据和判断属于咨询机构分析，引用前须核对原始数据来源。
+can_quote_directly: false
+provenance_note: >
+  来源为德勤（Deloitte）公开发布的行业报告。
+  当前未记录具体 source_url 和 access_date，标记为 not test-ready。
 
 used_in_tests: false
+
+# 注意：source_url/access_date 缺失，当前不满足 test-ready 条件。
+# 补齐 provenance 字段后可将 used_in_tests 升级为 true。
+# case-10（ppt-outline-basic）将本样本作为 adjacent/candidate provenance schema reference，
+# 不证明摘录来源或 bounded-input 状态。
 
 linked_test_cases: []

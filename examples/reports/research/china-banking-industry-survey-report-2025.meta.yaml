@@ -33,8 +33,9 @@ notes: >
   公开行业调查报告，数据丰富，结构清晰。
   适合学习研究报告框架、数据分析表述和行业趋势判断写法。
   需注意咨询公司视角倾向，结论不具有监管权威性。
+  本样本为咨询机构观点，仅作结构和表达风格参考，不是监管依据。
   适合学什么：报告结构、数据引用方式、趋势分析表述。
-  不适合学什么：作为监管政策依据。
+  不适合学什么：作为监管政策依据、学习推广性或咨询营销表述。
 
 recommended_uses:
   - 用于 report-outline 的研究报告框架参考
@@ -43,6 +44,21 @@ recommended_uses:
 not_suitable_for:
   - 不适合作为监管政策依据
   - 不适合学习推广性或咨询营销表述
+  - 不适合将咨询机构结论等同于监管判断
+
+# ── 来源溯源 ──
+source_url: ""
+access_date: ""
+source_version: "2025年版"
+archive_note: ""
+citation_boundary: >
+  本样本为毕马威公开行业调查报告，仅作为结构和表达风格参考。
+  咨询机构观点不代表监管权威，不得作为政策或监管依据引用。
+  报告中的数据和判断属于咨询机构分析，引用前须核对原始数据来源。
+can_quote_directly: false
+provenance_note: >
+  来源为毕马威（KPMG）公开发布的行业调查报告。
+  当前未记录具体 source_url 和 access_date，标记为 not test-ready。
 
 used_in_tests: false
 
