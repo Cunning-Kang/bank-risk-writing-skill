@@ -30,9 +30,9 @@ usable_for:
 
 notes: >
   上市银行公开年报，适合学习正式年报结构、风险披露表述和财务数据呈现方式。
-  年报内容经审计，数据可信度高。
+  年报数据经审计，但仅代表该机构自身披露，不得外推至全行业或其他机构。
   适合学什么：风险章节结构、管理层讨论与分析表述、数据披露格式。
-  不适合学什么：作为行业整体判断依据（单一银行视角）。
+  不适合学什么：作为行业整体判断依据（单一机构视角）、推导其他银行风险状况。
 
 recommended_uses:
   - 用于 report-outline 的年报风险章节结构参考
@@ -41,6 +41,21 @@ recommended_uses:
 not_suitable_for:
   - 不适合作为行业整体判断依据
   - 不适合推导其他银行风险状况
+  - 不适合将单一银行数据外推至行业结论
+
+# ── 来源溯源 ──
+source_url: ""
+access_date: ""
+source_version: "2025年度"
+archive_note: ""
+citation_boundary: >
+  本样本为招商银行2025年度公开年报，仅支持对该机构已披露材料的分析。
+  不得将年报数据或判断外推至全行业、其他银行机构或未披露信息。
+  引用任何数据前须核对年报原文；年报数据仅代表报告期情况。
+can_quote_directly: false
+provenance_note: >
+  来源为招商银行公开发布的年度报告。
+  当前未记录具体 source_url 和 access_date，标记为 not test-ready。
 
 used_in_tests: false
 

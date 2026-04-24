@@ -1,8 +1,8 @@
 # Examples — 公开样本库
 
-本目录用于存放项目所用的公开样本，包括政策原文、银行披露材料、研究报告、PPT 汇报材料和改写对照案例。
+本目录用于存放项目所用的公开样本（samples），包括政策原文、银行披露材料、研究报告、PPT 汇报材料和改写对照案例。
 
-所有样本必须来自公开来源，且经过筛选和元信息标注后方可入库。
+所有样本必须来自公开来源，且经过筛选和元信息标注后方可入库。样本是 skill pack **源码树**（source tree）的一部分，与 `skills/`、`rules/`、`templates/`、`glossary/`、`checklists/`、`test-cases/` 共同构成完整的 skill pack。
 
 ---
 
@@ -39,12 +39,21 @@ examples/
    - `usable_for` — 适用于哪些 skill（至少一项）
    - `notes` — 必须说明适合学什么、不适合学什么
 
-3. 建议补充以下增强字段：
+3. 补充以下来源溯源字段（test-ready 样本必填，其他样本建议填写）：
+   - `source_url` — 原始公开来源 URL 或获取渠道说明
+   - `access_date` — 获取/访问日期（YYYY-MM-DD）
+   - `source_version` — 来源版本或文件日期（如政策修正版年份、年报年度）
+   - `archive_note` — 归档说明（链接可能失效时说明替代方式）
+   - `citation_boundary` — 引用边界（必填：明确该样本在引用时的限制）
+   - `can_quote_directly` — 是否可直接引用原文（默认 false）
+   - `provenance_note` — 溯源补充说明（无 source_url 时建议填写）
+
+4. 建议补充以下增强字段：
    - `recommended_uses` — 说明该样本最适合支持哪些任务
    - `not_suitable_for` — 说明不应从该样本学习什么
    - `used_in_tests` / `linked_test_cases` — 标记是否已进入测试集
 
-4. 检查 `risk_flags`，如有风险标记则如实填写。
+5. 检查 `risk_flags`，如有风险标记则如实填写。
 
 ### 字段说明
 
@@ -62,6 +71,13 @@ examples/
 | recommended_uses | 建议填写 | 最适合支持的任务或测试方式 |
 | not_suitable_for | 建议填写 | 明确提醒不要误学的部分 |
 | notes | 必填 | 必须说明适用与不适用场景 |
+| source_url | test-ready 必填 | 原始公开来源 URL 或获取渠道说明 |
+| access_date | 建议填写 | 获取/访问日期（YYYY-MM-DD） |
+| source_version | 建议填写 | 来源版本或文件日期 |
+| archive_note | 选填 | 归档说明（链接可能失效时说明替代方式） |
+| citation_boundary | 必填 | 引用时的限制——不可超出来源材料范围 |
+| can_quote_directly | 必填 | 是否可直接引用原文（默认 false） |
+| provenance_note | 无 source_url 时建议填写 | 溯源补充说明 |
 | used_in_tests | 选填 | 是否已被测试集使用 |
 | linked_test_cases | 选填 | 关联的 case 编号 |
 
@@ -114,10 +130,12 @@ examples/
 - 先选高质量正样本，明确该样本支持哪个 skill、哪类输出
 - 再选少量负样本，提醒模型避免宣传腔、目录式标题、过强结论等问题
 
-### 用于测试集
-- 优先选择 `quality_score ≥ 4` 且 `public_confirmed: true` 的样本
+### 用于测试集（tests）
+- 优先选择 `quality_score >= 4` 且 `public_confirmed: true` 的样本
 - 一份样本进入测试集前，至少补齐 `recommended_uses` 和 `not_suitable_for`
 - 如果样本风险较高但仍要测试，应在 `risk_flags` 与 `notes` 中同时写清楚
+- 测试用例和验收标准（expected acceptance criteria）定义在 `test-cases/` 目录下，详见 `test-cases/TEST_PLAN.md`
+- 验收标准是判定输出是否合格的条件，不是标准答案——不要求逐字匹配
 
 ## `quality_score` 的建议口径
 
@@ -131,4 +149,45 @@ examples/
 
 ### 用于 few-shot 对照
 - 优先选边界清晰、结构稳定、适合迁移的样本
-- 避免把权威性不足、宣传色彩较重的材料当作“标准写法”
+- 避免把权威性不足、宣传色彩较重的材料当作「标准写法」
+
+---
+
+## 样本来源溯源与引用边界（Provenance & Citation Boundary）
+
+### `quality_score` 仅衡量用途价值
+
+`quality_score` 评估的是该样本对 skill pack 的**结构、风格和表达参考价值**，不代表：
+- 该样本具有监管权威性或可作为监管依据
+- 样本中的数据或判断可外推至来源材料以外的范围
+- 样本可替代对原始文件的核验
+
+### 两层溯源规则
+
+**第一层：test-ready 样本（`used_in_tests: true`）**
+
+用于测试集的样本必须具备完整的溯源信息：
+- `source_url` 或等效的 `provenance_note` 说明获取渠道
+- `access_date`、`source_version` 或 `document_date`
+- `citation_boundary` 明确引用限制
+- `can_quote_directly` 明确是否可逐字引用
+- `linked_test_cases` 非空且指向已存在的 case 文件
+
+**第二层：style/structure-only 样本**
+
+仅用于风格或结构参考的样本：
+- 必须有 `citation_boundary`
+- 必须有 `source_name` 和来源类型说明
+- 如果没有 `source_url`，必须有 `provenance_note` 说明获取渠道
+- 须标记为 `not test-ready`（即 `used_in_tests: false`）
+- 不要求全部溯源字段完整，但来源边界和引用限制必须明确
+
+### 按类型的引用边界要求
+
+| 样本类型 | 引用边界 |
+|---------|---------|
+| 政策/监管原文 | 仅限该版本该条文的结构与表述参考；须核对最新正式文本；不代表当前生效版本 |
+| 年报/披露材料 | 仅支持对该机构已披露材料的分析；不得外推至全行业、其他机构或未披露信息 |
+| 咨询/研究报告 | 仅作结构或表达参考；非监管依据；结论不具有监管权威性 |
+| PPT/汇报材料 | 仅作页级逻辑和观点化标题参考；非监管或权威依据 |
+| 改写对照样本 | 仅作改写前后对照；原始材料须遵守其各自类型的引用边界 |

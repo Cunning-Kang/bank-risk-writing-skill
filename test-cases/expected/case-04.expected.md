@@ -51,6 +51,13 @@
 | 风格边界 | 正式、审慎、中性、克制，无媒体化或宣传化表达 | PASS / FAIL |
 | 最终结论 | 以上全部为 PASS 时，本 case 才可判 PASS | PASS / FAIL |
 
-## 7. 当前状态
+## 7. 输入材料引用
 
-当前暂无真实标准输出；本文件只提供可验收的判定规则。正式填入测试输入后，应按本规则逐项自评。
+- 对应 case 文件：`test-cases/cases/case-04-formal-polish-basic.md`
+- 输入来源：`test-cases/inputs/case-04.input.md`（引用外部文件）及 case 文件中内嵌的合成草稿（synthetic wording input）
+- 输入状态：bounded-input（合成材料，不含编造政策事实，不标记 test-ready）
+- 运行方式：将合成草稿作为 formal-polish skill 输入，收集输出后按本规则逐项评审
+
+## 8. 当前状态
+
+本文件定义了 case-04 的验收判定规则。case-04 已具备 bounded-input（人工合成草稿，明确标注 synthetic），可进行人工评审。合成材料非真实公开文件引用，不标记为 test-ready。

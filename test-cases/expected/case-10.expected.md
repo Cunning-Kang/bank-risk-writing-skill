@@ -52,6 +52,14 @@
 | 风格边界 | 正式、审慎、中性、克制，无媒体化或宣传化表达 | PASS / FAIL |
 | 最终结论 | 以上全部为 PASS 时，本 case 才可判 PASS | PASS / FAIL |
 
-## 7. 当前状态
+## 7. 输入材料引用
 
-当前暂无真实标准输出；本文件只提供可验收的判定规则。正式填入测试输入后，应按本规则逐项自评。
+- 对应 case 文件：`test-cases/cases/case-10-ppt-outline-basic.md`
+- 输入材料：`test-cases/inputs/case-10.input.md`（包含公开年报风险管理章节摘录；摘录文件仅标注"公开可用文本"，未标明具体机构）
+- PPT 结构参考：`examples/ppt/deloitte-chinese-banking-sector-2024-review-and-2025-outlook-zh-250428.meta.yaml`
+- 输入状态：bounded-input（摘录自身 source_url/access_date 缺失，不标记 test-ready）
+- 运行方式：将 test-cases/inputs/case-10.input.md 中的摘录作为 ppt-outline skill 输入，收集输出后按本规则逐项评审
+
+## 8. 当前状态
+
+本文件定义了 case-10 的验收判定规则。case-10 已具备 bounded-input（公开年报风险管理章节摘录 + 德勤报告结构参考），可进行人工评审。摘录来源未被元数据直接证明；当前摘录自身 source_url/access_date 缺失，补齐后可升级为 test-ready。
