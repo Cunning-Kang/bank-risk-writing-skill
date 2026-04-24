@@ -33,3 +33,15 @@ notes: >
   年报内容经审计，数据可信度高。
   适合学什么：风险章节结构、管理层讨论与分析表述、数据披露格式。
   不适合学什么：作为行业整体判断依据（单一银行视角）。
+
+recommended_uses:
+  - 用于 report-outline 的年报风险章节结构参考
+  - 用于 formal-polish 的管理层讨论与分析表达参考
+
+not_suitable_for:
+  - 不适合作为行业整体判断依据
+  - 不适合推导其他银行风险状况
+
+used_in_tests: false
+
+linked_test_cases: []

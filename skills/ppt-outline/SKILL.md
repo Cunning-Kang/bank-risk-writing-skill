@@ -38,6 +38,24 @@ PPT 不是把报告缩短，而是把主线讲清。
 - 原始材料极少、尚不足以支撑多页汇报时
 - 需要直接产出完整演讲稿或页面文案时
 
+# Trigger Conditions
+
+Invoke this skill when the user asks to convert a report, long text, policy interpretation, annual report excerpt, research summary, or analysis material into a page-level PPT outline for formal briefing or presentation.
+
+Use this skill when the request includes signals such as:
+- 做 PPT、PPT 提纲、转汇报页、演示结构、页级提纲
+- 将报告、长文、政策解读或研究材料压缩为 3–10 页左右的汇报结构
+- 需要每页标题、支撑点、本页作用、备注建议或口头摘要
+
+Do not use this skill when:
+- the user needs a report outline rather than slide-level structure
+- the user only needs language polishing
+- the user asks for a policy brief rather than a presentation structure
+- the material is too limited to support multiple slides unless the output is explicitly framed as an initial sketch
+- the requested output would require inventing unsupported facts, numbers, conclusions, or internal institutional views
+
+When the user asks for “汇报版” or “领导汇报”, prioritize conclusion-first sequencing and reduce page count.
+
 # Required Inputs
 
 尽量识别：
@@ -51,6 +69,27 @@ PPT 不是把报告缩短，而是把主线讲清。
 - 按 5–8 页控制
 - 优先采用“结论/判断 → 支撑 → 风险/影响 → 建议/关注点”的顺序
 - 以正式、审慎、可讲述为优先
+
+# Input Schema
+
+Required input:
+- `source_material`: report, long text, policy summary, annual report excerpt, research note, or analytical material to convert.
+
+Optional input:
+- `audience`: self-use / colleague discussion / department briefing / leadership briefing.
+- `page_count`: target page range or exact page count.
+- `style`: prudent / conclusion-first / analytical / execution-oriented.
+- `include_speaker_notes`: yes / no.
+- `include_one_minute_summary`: yes / no.
+
+Defaults when omitted:
+- use 5–8 pages.
+- sequence as conclusion or judgment → support → risks or impacts → recommendations or follow-up items.
+- prioritize formal, prudent, speakable slide logic.
+
+Insufficient input handling:
+- If the material cannot support the requested page count, reduce scope or mark the outline as an initial sketch.
+- Uncertain or unsupported content must be reflected in conservative page titles and notes.
 
 # Working Method
 
@@ -84,6 +123,32 @@ PPT 不是把报告缩短，而是把主线讲清。
 ## 5. 可选：1 分钟口头摘要
 - 仅在用户有汇报需求时提供
 
+# Output Contract
+
+The output must include:
+1. 建议总标题
+2. 汇报主线
+3. 页级提纲
+4. 不建议上 PPT 的内容
+5. 可选：1 分钟口头摘要（仅在用户有汇报需求时提供）
+
+Each page in the page-level outline must include:
+- 页标题（尽量观点化）
+- 本页核心信息（1 句，可选但推荐）
+- 3–5 个支撑点
+- 本页作用
+- 备注栏建议（如有）
+
+Mandatory quality constraints:
+- One page should carry one core message.
+- Page titles should follow the `ppt_titles` patterns in `glossary/preferred-expressions.yml` and avoid directory-style labels.
+- Long source paragraphs, excessive numerical detail, definitions, and method notes should be moved to notes or the “不建议上 PPT” section.
+- Page titles and support points must not express conclusions stronger than the source material supports.
+- The outline must prioritize speakability and information selection over comprehensive text compression.
+
+Self-check anchor:
+- Each slide must have a traceable source basis, a single core message, and no more than 3–5 support points unless the user explicitly requests otherwise.
+
 # Page-Level Rules
 
 1. 一页尽量只承载一个核心信息
@@ -98,20 +163,8 @@ PPT 不是把报告缩短，而是把主线讲清。
 页标题优先参考 `glossary/preferred-expressions.yml` 中 `ppt_titles` 类表达模式，
 确保标题尽量观点化，而非目录式命名。
 
-优先使用这类标题方式（仅作句式参考，应根据材料内容重新组织，不得机械套用）：
-- 当前需要重点关注的变化主要体现在……
-- 政策变化对……提出了更明确要求
-- 从公开披露看，……方面呈现出若干特征
-- 更值得关注的并非……本身，而是……
-- 现阶段相关影响主要集中在以下几个方面
-
-避免使用：
-- 背景介绍
-- 相关情况
-- 政策解读
-- 风险分析
-- 下一步工作
-- 建议措施
+`ppt_titles.preferred` 是观点化标题句式参考；应根据输入材料重新组织，不得机械套用。
+`ppt_titles.avoid` 是目录式标题禁用清单；除非用户明确要求保留目录式结构，否则不得作为页标题使用。
 
 # What Belongs in Notes Instead of Slides
 

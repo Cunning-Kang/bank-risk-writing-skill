@@ -37,6 +37,24 @@ allowed-tools:
 - 需要模拟内部执行方案或内部审稿口径的任务
 - 需要补造政策依据、实施细则或监管态度的任务
 
+# Trigger Conditions
+
+Invoke this skill when the user asks to summarize, brief, interpret, or structure a public policy, regulatory document, notice, official Q&A, or comparable public regulatory material for banking risk management, policy research, briefing, or presentation preparation.
+
+Use this skill when the request includes signals such as:
+- 政策简报、监管摘要、文件要点、政策梳理、答记者问整理
+- 对公开政策原文做摘要、要点提炼、影响梳理
+- 生成简报版、汇报版、领导摘要版政策材料
+- 基于政策文本提炼后续关注点或待核实事项
+
+Do not use this skill when:
+- the user only needs language polishing of an existing draft
+- the user asks for a report outline rather than a policy brief
+- the user asks for a page-level PPT outline
+- the task would require simulating internal institutional rules, approval logic, or undisclosed internal policy views
+
+If the input is only a secondary summary or incomplete fragment, proceed only with a clearly bounded conservative output and mark missing source basis explicitly.
+
 # Required Inputs
 
 优先从用户输入中识别以下要素：
@@ -47,6 +65,26 @@ allowed-tools:
 - 如有，文件发布日期、发文机构、文件性质
 
 若信息不足，仍可先输出基于现有材料的保守版结果，但必须显式说明边界。
+
+# Input Schema
+
+Required input:
+- `source_material`: policy text, regulatory notice, official Q&A, user-provided excerpt, or clearly identified public material.
+
+Optional input:
+- `output_use`: research / briefing / leadership summary / presentation pre-work / general note.
+- `focus_angle`: risk management / compliance / business impact / peer observation / comprehensive.
+- `length`: concise / standard / detailed, or a target word count.
+- `document_metadata`: issuing institution, publication date, document title, document type, effective date, or source link when provided by the user.
+
+Defaults when omitted:
+- `output_use`: standard policy brief.
+- `focus_angle`: comprehensive, with risk management and compliance implications separated where supported.
+- `length`: standard.
+
+Insufficient input handling:
+- If source material is incomplete, explicitly state the boundary at the beginning.
+- If publication date, issuing institution, applicable scope, implementation timing, or responsibility body is not present in the input, mark it as 待核实 / 需补充来源 rather than filling it in.
 
 # Working Method
 
@@ -127,6 +165,27 @@ allowed-tools:
 - 每页标题应尽量观点化
 - 每页仅保留最关键支撑点
 - 不能把原文条款大段搬上页面
+
+# Output Contract
+
+The output must include these sections unless the user explicitly requests a shorter briefing format:
+1. 文件概况
+2. 核心要点
+3. 关键变化或重点关注
+4. 可能影响
+5. 后续关注点 / 待核实事项
+
+For 汇报版 / 领导摘要版 requests, the output must instead start with a core conclusion, then provide 3–5 key points, then list concrete follow-up attention items.
+
+Mandatory quality constraints:
+- Facts, analysis, and recommendations must be separated.
+- Any “变化 / 新增 / 收紧” wording must have an explicit comparison basis in the input.
+- Possible impacts must use cautious language and stay within the supplied material.
+- Missing or uncertain details must be marked explicitly.
+- The output must not create policy requirements, implementation details, regulatory intent, numbers, dates, institutions, or internal action plans not present in the source material.
+
+Self-check anchor:
+- Every core point must be traceable to the user-provided or clearly identified public source material.
 
 # Hard Rules
 

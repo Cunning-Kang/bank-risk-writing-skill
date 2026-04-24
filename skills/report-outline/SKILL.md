@@ -35,6 +35,24 @@ allowed-tools:
 - 输入材料极少，只能产出一句话摘要时
 - 需要直接写成完整报告正文时
 
+# Trigger Conditions
+
+Invoke this skill when the user asks to build a report outline, research framework, analytical structure, briefing structure, or writing framework from public materials, excerpts, annual report sections, policy materials, research notes, or an existing draft.
+
+Use this skill when the request includes signals such as:
+- 报告提纲、研究框架、汇报稿结构、搭个大纲、写作框架
+- 基于年报、政策文本、公开材料或多份材料生成结构化报告框架
+- 重构草稿结构，使其更适合研究、分析或正式汇报
+
+Do not use this skill when:
+- the user only needs sentence-level polishing
+- the user asks for a policy brief rather than a report-writing framework
+- the user asks for page-level PPT structure
+- the task requires writing a full report body rather than an outline
+- the requested framework would require inventing missing facts, data, or internal institutional standards
+
+When multiple skills could apply, choose this skill only if the primary deliverable is a report-level structure rather than a summary or slide deck.
+
 # Required Inputs
 
 尽量识别：
@@ -48,6 +66,27 @@ allowed-tools:
 - 先给推荐标题和写作主线
 - 以 4–6 个一级部分控制主体结构
 - 二级提纲只展开关键写作任务，不做空泛铺陈
+
+# Input Schema
+
+Required input:
+- `source_material`: public material, annual report section, policy excerpt, research summary, user draft, or multiple source excerpts.
+
+Optional input:
+- `report_use`: research / briefing / memo / comparative analysis / observation note.
+- `audience`: self-use / department briefing / leadership reading / PPT preparation.
+- `length`: short / medium / long, or expected section depth.
+- `style`: research-oriented / briefing-oriented / conclusion-first.
+- `source_count`: single-source / multi-source; include source labels if provided.
+
+Defaults when omitted:
+- provide a recommended title and writing thesis.
+- use 4–6 primary sections for the main outline.
+- expand only the writing tasks that the material can support.
+
+Insufficient input handling:
+- If the material is too thin for a complete outline, label the output as an initial framework and identify missing evidence or materials.
+- For multi-source input, preserve source distinctions where needed and mark conflicts or gaps rather than forcing a single conclusion.
 
 # Working Method
 
@@ -81,6 +120,25 @@ allowed-tools:
 - 指出要写得更扎实，最好补哪些公开证据、数据、对照材料或政策原文
 
 若材料明显不足，应在开头直接说明“以下为基于现有材料形成的初步框架”。
+
+# Output Contract
+
+The output must include:
+1. 推荐标题
+2. 核心结论或写作主线
+3. 一级提纲
+4. 二级展开建议
+5. 建议补充材料
+
+Mandatory quality constraints:
+- The outline must be derived from the input material, not from a generic template.
+- Each primary section must have a clear writing task and logical order.
+- Secondary expansion must say what to write, why it matters, and what evidence is needed.
+- Multi-source outlines must integrate by theme rather than listing source A / source B mechanically.
+- Insufficient-input cases must remain conservative and avoid complete-looking but unsupported frameworks.
+
+Self-check anchor:
+- Every section title and secondary writing task must be explainable from the supplied material or explicitly marked as needing additional evidence.
 
 # Core Rules
 

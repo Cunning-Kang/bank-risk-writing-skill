@@ -32,3 +32,15 @@ notes: >
   需注意咨询公司报告可能含推广性表述，引用时需审慎甄别。
   适合学什么：章节划分、数据呈现、趋势判断表述。
   不适合学什么：结论的权威性（非监管机构发布）。
+
+recommended_uses:
+  - 用于 ppt-outline 的页级逻辑与标题组织参考
+  - 用于 report-outline 的行业报告结构参考
+
+not_suitable_for:
+  - 不适合作为监管权威依据
+  - 不适合学习推广性措辞或过强行业判断
+
+used_in_tests: false
+
+linked_test_cases: []

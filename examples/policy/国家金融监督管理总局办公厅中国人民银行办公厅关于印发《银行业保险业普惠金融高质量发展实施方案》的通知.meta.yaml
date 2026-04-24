@@ -33,3 +33,16 @@ notes: >
   联合发文的政策实施方案，适合学习政策文件结构（背景-目标-任务-保障）和正式表述。
   可作为政策解读、改写任务的测试输入。
   不含推广性内容，政策口径明确。
+
+recommended_uses:
+  - 用于 policy-brief 的政策任务提炼测试
+  - 用于 report-outline 的政策研究结构参考
+  - 用于 formal-polish 的正式政策表述参考
+
+not_suitable_for:
+  - 不适合学习内部执行口径
+  - 不适合补造政策未明示的实施细节
+
+used_in_tests: false
+
+linked_test_cases: []

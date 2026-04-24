@@ -30,3 +30,15 @@ notes: >
   核心监管法律原文，2003年颁布、2006年修正。
   适合学习正式法律文本结构（章-条式层级）和审慎表述方式。
   不含推广性内容，可作为权威政策引用基准。
+
+recommended_uses:
+  - 用于 policy-brief 的法律条文结构识别与要点提炼
+  - 用于 formal-polish 的正式法律文本风格参考
+
+not_suitable_for:
+  - 不适合推导最新监管动态
+  - 不适合替代现行正式法律文本核验
+
+used_in_tests: false
+
+linked_test_cases: []

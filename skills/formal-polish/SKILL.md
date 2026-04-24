@@ -37,6 +37,23 @@ allowed-tools:
 - 需要重做分析框架而非语言润色的任务
 - 用户明确要求“自由改写”或“创意表达”的任务
 
+# Trigger Conditions
+
+Invoke this skill when the user provides an existing draft, paragraph, note, meeting-style text, research summary, or semi-formal explanation and asks for formal polishing, cautious rewriting, concise rewriting, or professional wording suitable for banking risk management, policy research, or formal reporting contexts.
+
+Use this skill when the request includes signals such as:
+- 润色、改写、改得正式一点、换成汇报文字、审慎一点
+- 去口语化、去媒体化、压缩、精炼、优化表达
+- 保留原意但提高正式性、清晰度或稳健性
+
+Do not use this skill when:
+- the user needs new analysis or a new report structure rather than polishing an existing draft
+- the user asks for policy-brief extraction from original policy text
+- the user asks for a report outline or PPT page-level outline
+- the requested rewrite would require adding facts, numbers, citations, regulatory basis, or internal institutional views not present in the input
+
+When intent is mixed, preserve the source meaning first and state any boundary before offering structural improvements.
+
 # Required Inputs
 
 优先识别以下信息：
@@ -51,6 +68,27 @@ allowed-tools:
 - 允许微调句序，但不重构论证
 - 不新增事实、数字、出处、政策依据
 - 以“正式、审慎、清晰”优先
+
+# Input Schema
+
+Required input:
+- `draft_text`: the text to polish or rewrite.
+
+Optional input:
+- `target_style`: formal / prudent / concise / briefing-ready / research-summary style.
+- `edit_scope`: wording only / sentence order allowed / paragraph order allowed / compression requested.
+- `preserve_meaning`: strict / moderate; default is strict.
+- `length`: keep similar length / shorten / target word count.
+- `risk_sensitivity`: whether to flag unsupported numbers, policy references, dates, institutions, or strong judgments.
+
+Defaults when omitted:
+- preserve original meaning strictly.
+- allow minor sentence-order adjustment, but do not rebuild the argument.
+- do not add facts, figures, sources, policy basis, or examples.
+- prioritize formal, prudent, clear, and concise wording.
+
+Insufficient input handling:
+- If the draft contains unsupported facts, numbers, policy references, or strong claims, keep the boundary visible and mark the item as 待核实 / 需补充依据.
 
 # Working Method
 
@@ -82,6 +120,23 @@ allowed-tools:
 - 时间范围、适用对象、责任主体表述不清
 
 若不存在明显待核实事项，可省略本节。
+
+# Output Contract
+
+The output must normally include:
+1. 修改方向
+2. 修订稿
+3. 待核实事项（如有）
+
+Mandatory quality constraints:
+- The revised text must preserve the original meaning and all material information.
+- The output must remove or soften口语化、情绪化、夸张化、媒体化、绝对化表达.
+- Unsupported numbers, dates, institutions, policy references, and strong judgments must be marked rather than supplied with invented sources.
+- The revision must not add facts, cases, citations, regulatory basis, institutional views, or implementation details not present in the source draft.
+- If multiple versions are requested, versions may differ only in style, length, and presentation density; they must not differ in factual boundary.
+
+Self-check anchor:
+- Every concrete claim in the revision must either appear in the original draft or be explicitly marked as requiring verification.
 
 # Hard Rules
 
