@@ -100,6 +100,8 @@ Insufficient input handling:
 
 # Default Output Structure
 
+🔴 CHECKPOINT · 默认一级提纲控制在 4–6 节。若材料不足以支撑 4 节，缩减而非注水。不得超过 6 节，除非用户明确要求且材料充足。
+
 ## 1. 推荐标题
 - 标题应明确主题和任务对象，不空泛
 
@@ -108,6 +110,7 @@ Insufficient input handling:
 
 ## 3. 一级提纲
 - 列出主要章节，并说明各章作用
+- 每节必须对应一个写作任务，而非一个抽象分类标签
 
 ## 4. 二级展开建议
 对每个一级部分，优先说明：
